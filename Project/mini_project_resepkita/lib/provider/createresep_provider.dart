@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_resepkita/createresep/models/create_model.dart';
+import 'package:mini_project_resepkita/component/models/create_model.dart';
 
 class TodoListProvider with ChangeNotifier {
-  List<TodoModel> _todoidlist = [];
+  final List<TodoModel> _todoidlist = [];
   final TextEditingController _todoController = TextEditingController();
   final TextEditingController _todo2controller = TextEditingController();
   /////////////////////////////
@@ -17,6 +17,7 @@ class TodoListProvider with ChangeNotifier {
   TextEditingController get todo3Controller => _todo3controller;
 
   ///nmabah todo
+  // ignore: non_constant_identifier_names
   void addTodo(TodoModel TodoModel) {
     _todoidlist.add(TodoModel);
     _todoController.clear();

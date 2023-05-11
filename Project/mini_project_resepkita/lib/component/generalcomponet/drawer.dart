@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_resepkita/screen/profilescreen.dart';
 
-import '../style/colorsstyle.dart';
-import '../style/fontstyle.dart';
+import '../../style/colorsstyle.dart';
+import '../../style/fontstyle.dart';
 
 class Drawerlist extends StatefulWidget {
   const Drawerlist({Key? key}) : super(key: key);
@@ -18,9 +18,8 @@ class _DrawerlistState extends State<Drawerlist> {
       children: <Widget>[
         UserAccountsDrawerHeader(
           accountName: Text("Thiyara Al-Mawaddah",
-              style: TextCustome()
-                  .regular
-                  .copyWith(fontWeight: FontWeight.bold, color: ColorStyle().white)),
+              style: TextCustome().regular.copyWith(
+                  fontWeight: FontWeight.bold, color: ColorStyle().white)),
           accountEmail: Text("Silahkan login",
               style: TextCustome()
                   .medium
@@ -33,24 +32,24 @@ class _DrawerlistState extends State<Drawerlist> {
               fit: BoxFit.cover,
             ),
           ),
-          currentAccountPicture: CircleAvatar(
-              backgroundImage: NetworkImage(
-                  "assets/image/profile.png")),
+          currentAccountPicture: const CircleAvatar(
+              backgroundImage: NetworkImage("assets/image/profile.png")),
         ),
         listtilewidget(
-            leading: Icon(Icons.contact_mail),
+            leading: const Icon(Icons.contact_mail),
             title: "Contact us",
             ontap: () {
-               Navigator.push(context, MaterialPageRoute(builder: (_) => Profile()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => Profile()));
             }),
         listtilewidget(
-            leading: Icon(Icons.people_alt),
+            leading: const Icon(Icons.people_alt),
             title: "About us",
             ontap: () {
               Navigator.pop(context);
             }),
         listtilewidget(
-            leading: Icon(
+            leading: const Icon(
               Icons.login_sharp,
             ),
             title: "login",

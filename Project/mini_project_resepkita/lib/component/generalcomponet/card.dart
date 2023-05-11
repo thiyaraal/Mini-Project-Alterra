@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../style/colorsstyle.dart';
-import '../style/fontstyle.dart';
+import '../../style/colorsstyle.dart';
+import '../../style/fontstyle.dart';
 
 class ItemCard extends StatelessWidget {
   final String judul;
@@ -12,14 +12,14 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sizeBox = SizedBox(height: 10);
+    const sizeBox = SizedBox(height: 10);
     return SizedBox(
       height: 230,
       width: 180,
       child: Card(
           color: ColorStyle().secondarypink,
           child: Padding(
-            padding: EdgeInsets.all(12),
+            padding:const  EdgeInsets.all(12),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

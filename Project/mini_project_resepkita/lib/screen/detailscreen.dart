@@ -1,3 +1,7 @@
+// ignore: duplicate_ignore
+// ignore: file_names
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
@@ -7,14 +11,14 @@ import '../style/fontstyle.dart';
 class DetailResepNusantara extends StatefulWidget {
   final dynamic item;
 
-  DetailResepNusantara({Key? key, required this.item}) : super(key: key);
+  const DetailResepNusantara({Key? key, required this.item}) : super(key: key);
 
   @override
   State<DetailResepNusantara> createState() => _DetailResepNusantaraState();
 }
 
 class _DetailResepNusantaraState extends State<DetailResepNusantara> {
-  Icon ikon = Icon(
+  Icon ikon = const Icon(
     Icons.star,
     color: Colors.orange,
     size: 20,
@@ -29,19 +33,19 @@ class _DetailResepNusantaraState extends State<DetailResepNusantara> {
           elevation: 0.0,
           title: Text(
             widget.item['nama'],
-            style: TextCustome().medium.copyWith(
+            style: TextCustome().mediumpink.copyWith(
                 letterSpacing: 2, fontSize: 24, fontWeight: FontWeight.w500),
           ),
         ),
         body: ListView(
           children: [
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   GFImageOverlay(
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
                       boxFit: BoxFit.cover,
                       height: 240,
                       width: 350,
@@ -73,7 +77,7 @@ class _DetailResepNusantaraState extends State<DetailResepNusantara> {
                       ],
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Card(
                       color: ColorStyle().card,
@@ -88,7 +92,7 @@ class _DetailResepNusantaraState extends State<DetailResepNusantara> {
                               style:
                                   TextCustome().medium.copyWith(fontSize: 14),
                             ),
-                            SizedBox(height: 8),
+                            const SizedBox(height: 8),
                             ...List.generate(
                                 widget.item["bahan"].length as int,
                                 (index) => Text(
@@ -101,7 +105,7 @@ class _DetailResepNusantaraState extends State<DetailResepNusantara> {
                       ),
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Card(
                       color: ColorStyle().card,
@@ -116,7 +120,7 @@ class _DetailResepNusantaraState extends State<DetailResepNusantara> {
                               style:
                                   TextCustome().medium.copyWith(fontSize: 14),
                             ),
-                            SizedBox(height: 8),
+                            const SizedBox(height: 8),
                             ...List.generate(
                                 widget.item["bumbuhalus"].length as int,
                                 (index) => Text(
@@ -170,7 +174,7 @@ class _DetailResepNusantaraState extends State<DetailResepNusantara> {
                             'Bahan tambahan',
                             style: TextCustome().medium.copyWith(fontSize: 14),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           Text(widget.item['caramasak'],
                               style: TextCustome().regular.copyWith(
                                   fontSize: 12, color: ColorStyle().grey)),

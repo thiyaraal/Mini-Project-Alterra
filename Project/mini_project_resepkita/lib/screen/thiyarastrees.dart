@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_resepkita/component/button.dart';
+import 'package:mini_project_resepkita/component/generalcomponet/button.dart';
 import 'package:provider/provider.dart';
-import '../component/drawer.dart';
+import '../component/generalcomponet/drawer.dart';
 import '../provider/apijson.dart';
 import '../style/colorsstyle.dart';
 import '../style/fontstyle.dart';
 import 'detailscreen.dart';
-import 'package:getwidget/getwidget.dart';
 
 class HomePageResepNusantara extends StatefulWidget {
   const HomePageResepNusantara({Key? key}) : super(key: key);
@@ -26,35 +25,40 @@ class _HomePageResepNusantaraState extends State<HomePageResepNusantara> {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldkey = GlobalKey<ScaffoldState>();
     return Scaffold(
-      key: _scaffoldkey,
+      key: scaffoldkey,
       backgroundColor: ColorStyle().backogrundbody,
       appBar: AppBar(
         actions: [
           menuList(context),
         ],
-        leading: IconButton(
-            onPressed: () {
-              _scaffoldkey.currentState!.openDrawer();
-            },
-            icon: Icon(
-              Icons.list,
-              color: ColorStyle().primaryblack,
-              size: 30,
-            )),
+        
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: Text(
-          "ResepKita",
-          style: TextCustome().medium.copyWith(
-              letterSpacing: 2, fontSize: 32, fontWeight: FontWeight.w500),
+        title: Row(
+          children: [
+            Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Image.asset(
+            'assets/image/logoresep.png',
+            height: 60,
+            width: 60,
+          ),
+        ),
+            Text(
+              "ResepKita",
+              style: TextCustome().medium.copyWith(
+                  letterSpacing: 2, fontSize: 32, fontWeight: FontWeight.w500),
+            ),
+          ],
         ),
       ),
       // appBar: AppBar(
       //   title: const Text('Pertemuan12'),
       // ),
-      drawer: Drawer(backgroundColor: ColorStyle().white, child: Drawerlist()),
+      // drawer: Drawer(
+      //     backgroundColor: ColorStyle().white, child: const Drawerlist()),
       body: Padding(padding: const EdgeInsets.all(16.0), child: body(context)),
     );
   }
@@ -77,7 +81,6 @@ class _HomePageResepNusantaraState extends State<HomePageResepNusantara> {
           PopupMenuItem(
             child: ListTile(
               onTap: () {
-                print('laptop');
                 prov.ubahList('laptop');
                 Navigator.pop(context);
               },
@@ -113,8 +116,16 @@ class _HomePageResepNusantaraState extends State<HomePageResepNusantara> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            PrimaryButton(text: "Makanan Berat", onPressed: () => prov.ubahList('makananberat'),height: 100, width: 200),
-            PrimaryButton(text: "Makanan Ringan", onPressed: () => prov.ubahList('makananringan'),height: 100, width: 200)
+            PrimaryButton(
+                text: "Makanan Berat",
+                onPressed: () => prov.ubahList('makananberat'),
+                height: 100,
+                width: 200),
+            PrimaryButton(
+                text: "Makanan Ringan",
+                onPressed: () => prov.ubahList('makananringan'),
+                height: 100,
+                width: 200)
           ],
         ),
         Padding(
@@ -157,8 +168,7 @@ class _HomePageResepNusantaraState extends State<HomePageResepNusantara> {
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
                             item['desc'].toString().length >= 100
-                                ? item['desc'].toString().substring(0, 100) +
-                                    "....read more"
+                                ? "${item['desc'].toString().substring(0, 100)}....read more"
                                 : item['desc'],
                             style: TextCustome().regular.copyWith(
                                 fontSize: 12, color: ColorStyle().grey)),
@@ -187,7 +197,8 @@ class _HomePageResepNusantaraState extends State<HomePageResepNusantara> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (_) => DetailResepNusantara(item: item)),
+                                      builder: (_) =>
+                                          DetailResepNusantara(item: item)),
                                 );
                               },
                               child: Text('lihat resep',

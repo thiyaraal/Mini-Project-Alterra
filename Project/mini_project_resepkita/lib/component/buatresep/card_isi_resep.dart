@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../style/colorsstyle.dart';
+import '../../style/colorsstyle.dart';
 
+// ignore: must_be_immutable
 class CardIsiResep extends StatelessWidget {
     TextEditingController controler;
     final String labelText;
@@ -10,7 +11,7 @@ class CardIsiResep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
                 // margin: EdgeInsets.all(20),
                 height: 100,
                 width: 400,

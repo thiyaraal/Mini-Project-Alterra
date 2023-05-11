@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:from_css_color/from_css_color.dart';
-import 'package:mini_project_resepkita/screen/myresep.dart';
 import 'package:mini_project_resepkita/screen/profilescreen.dart';
 import 'package:mini_project_resepkita/screen/savescreen.dart';
 import 'package:mini_project_resepkita/screen/thiyarastrees.dart';
 import 'package:mini_project_resepkita/style/colorsstyle.dart';
+
+import 'resepscreen.dart';
 
 class BottomVab extends StatefulWidget {
   const BottomVab({Key? key}) : super(key: key);
@@ -15,20 +15,12 @@ class BottomVab extends StatefulWidget {
 
 class _BottomVabState extends State<BottomVab> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
-  static List<Widget> _widgetOptions = <Widget>[
+  static final List<Widget> _widgetOptions = <Widget>[
     //page 1
-    HomePageResepNusantara(),
-    SaveScreen(),
-    ListResepSaya(),
+   const HomePageResepNusantara(),
+     SaveScreen(),
+     DaftarResepScreen(),
     Profile(),
-
-    //page 2
-
-    //page 4
-
-    //page 3 testing
   ];
 
   void _onItemTapped(int index) {
@@ -45,7 +37,7 @@ class _BottomVabState extends State<BottomVab> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: ColorStyle().primaryblack,
+        backgroundColor: ColorStyle().white,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../style/colorsstyle.dart';
+import '../../style/colorsstyle.dart';
 
 
 // ignore: must_be_immutable

@@ -483,7 +483,6 @@ class ResepKita extends ChangeNotifier {
   }
 
   ubahList(val) {
-    print('val');
     if (val == 'makananberat') {
       setData = makananberat;
     } else {

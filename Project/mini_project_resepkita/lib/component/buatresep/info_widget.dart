@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_resepkita/component/button.dart';
-import 'package:mini_project_resepkita/createresep/resepscreen.dart';
-import 'package:mini_project_resepkita/screen/buatresep.dart';
-import 'package:mini_project_resepkita/screen/thiyarastrees.dart';
+import 'package:mini_project_resepkita/component/generalcomponet/button.dart';
 import 'package:mini_project_resepkita/style/colorsstyle.dart';
 import 'package:mini_project_resepkita/style/fontstyle.dart';
 

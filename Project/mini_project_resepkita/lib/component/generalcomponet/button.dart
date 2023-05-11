@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import '../style/colorsstyle.dart';
-import '../style/fontstyle.dart';
+import '../../style/colorsstyle.dart';
+import '../../style/fontstyle.dart';
 
 // ignore: must_be_immutable
 class PrimaryButton extends StatelessWidget {
@@ -39,6 +39,7 @@ class PrimaryButton extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class SecondaryButton extends StatelessWidget {
   double? height;
   double? width;

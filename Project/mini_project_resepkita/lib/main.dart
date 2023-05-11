@@ -1,17 +1,14 @@
-import 'dart:js';
+
 
 import 'package:flutter/material.dart';
-import 'package:mini_project_resepkita/component/bottomnavbar.dart';
+import 'package:mini_project_resepkita/screen/FirstScreen_bottom.dart';
 import 'package:mini_project_resepkita/provider/createresep_provider.dart';
-import 'package:mini_project_resepkita/screen/detailScreen.dart';
-import 'package:mini_project_resepkita/screen/test.dart';
+import 'package:mini_project_resepkita/screen/thiyarastrees.dart';
+
 import 'package:provider/provider.dart';
 
-import 'createresep/resepscreen.dart';
+import 'screen/resepscreen.dart';
 import 'provider/apijson.dart';
-import 'screen/myresep.dart';
-import 'screen/savescreen.dart';
-import 'screen/thiyarastrees.dart';
 
 
 void main() {
@@ -45,7 +42,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const  HomePageResepNusantara()
+      home: const BottomVab()
     );
   }
 }
