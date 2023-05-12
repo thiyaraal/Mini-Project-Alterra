@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:mini_project_resepkita/screen/profilescreen.dart';
-import 'package:mini_project_resepkita/screen/savescreen.dart';
-import 'package:mini_project_resepkita/screen/thiyarastrees.dart';
+import 'package:mini_project_resepkita/screen/categoriscreen.dart';
+import 'package:mini_project_resepkita/screen/homepagescreen.dart';
 import 'package:mini_project_resepkita/style/colorsstyle.dart';
 
 import 'resepscreen.dart';
 
-class BottomVab extends StatefulWidget {
-  const BottomVab({Key? key}) : super(key: key);
+class FirstScreenWithBottomNav extends StatefulWidget {
+  const FirstScreenWithBottomNav({Key? key}) : super(key: key);
 
   @override
-  State<BottomVab> createState() => _BottomVabState();
+  State<FirstScreenWithBottomNav> createState() => _FirstScreenWithBottomNavState();
 }
 
-class _BottomVabState extends State<BottomVab> {
+class _FirstScreenWithBottomNavState extends State<FirstScreenWithBottomNav> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
     //page 1
-   const HomePageResepNusantara(),
-     SaveScreen(),
-     DaftarResepScreen(),
+    const HomePageResepNusantara(),
+    CategoryScreen(),
+    DaftarResepScreen(),
     Profile(),
   ];
 
@@ -44,10 +44,10 @@ class _BottomVabState extends State<BottomVab> {
             label: "Beranda",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.save),
-            label: 'tersimpan',
+            icon: Icon(Icons.list_alt_outlined),
+            label: 'Kategori',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.list_alt), label: 'Resep'),
+          BottomNavigationBarItem(icon: Icon(Icons.create), label: 'Resep Kamu'),
           BottomNavigationBarItem(
               icon: Icon(Icons.person_rounded), label: 'Profil')
         ],

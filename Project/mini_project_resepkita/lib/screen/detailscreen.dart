@@ -30,7 +30,7 @@ class _DetailResepNusantaraState extends State<DetailResepNusantara> {
     return Scaffold(
         backgroundColor: ColorStyle().backogrundbody,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+           backgroundColor: ColorStyle().card,
           elevation: 0.0,
           title: Text(
             widget.item['nama'],
@@ -54,15 +54,8 @@ class _DetailResepNusantaraState extends State<DetailResepNusantara> {
                   Padding(
                     padding: const EdgeInsets.only(right: 40, left: 40),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        // Padding(
-                        //   padding: const EdgeInsets.only(top: 16, bottom: 16),
-                        //   child: Text(
-                        // 'Masakan ${widget.item['asal']}',
-                        //     style: TextCustome().medium.copyWith(fontSize: 14),
-                        //   ),
-                        // ),
                         WidgetText(
                             text: 'Masakan ${widget.item['asal']}',
                             style: const TextStyle(fontSize: 14)),

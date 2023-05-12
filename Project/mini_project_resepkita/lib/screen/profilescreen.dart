@@ -11,7 +11,7 @@ class Profile extends StatelessWidget {
     return Scaffold(
         backgroundColor: ColorStyle().backogrundbody,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+            backgroundColor: ColorStyle().card,
           elevation: 0.0,
           title: Text(
             "Profile",
@@ -90,7 +90,7 @@ class Profile extends StatelessWidget {
               ),
               ProfileMenu(
                 text: "Keluar",
-                icons: Icons.offline_bolt,
+                icons: Icons.logout,
                 press: () {},
               ),
             ],

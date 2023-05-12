@@ -52,7 +52,7 @@ class BuatResep extends StatelessWidget {
     return Scaffold(
         backgroundColor: ColorStyle().backogrundbody,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          backgroundColor: ColorStyle().card,
           elevation: 0.0,
           title: Text(
             "Buat Resep",
@@ -162,7 +162,8 @@ class BuatResep extends StatelessWidget {
                                           id: uuid.v4(),
                                           judul: judulController.text,
                                           bahanawal: bahanawalController.text,
-                                          bahantambahan: bahantambahanController.text,
+                                          bahantambahan:
+                                              bahantambahanController.text,
                                           caramasak: caramasakController.text));
                                 }
                                 Navigator.pop(context);

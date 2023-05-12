@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mini_project_resepkita/provider/recomend_api_json_provider.dart';
 import 'package:mini_project_resepkita/screen/FirstScreen_bottom.dart';
 import 'package:mini_project_resepkita/provider/createresep_provider.dart';
+import 'package:mini_project_resepkita/screen/categoriscreen.dart';
+import 'package:mini_project_resepkita/screen/homepagescreen.dart';
 
 
 import 'package:provider/provider.dart';
@@ -39,6 +41,6 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: BottomVab());
+        home: FirstScreenWithBottomNav());
   }
 }

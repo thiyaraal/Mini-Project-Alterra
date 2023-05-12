@@ -20,7 +20,7 @@ class DetailResepAnda extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+            backgroundColor: ColorStyle().card,
           elevation: 0.0,
           title: Text(
             judul,

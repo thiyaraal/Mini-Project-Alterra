@@ -56,7 +56,16 @@ class _DaftarResepScreenState extends State<DaftarResepScreen> {
                                             .copyWith(fontSize: 18),
                                       ),
                                     ),
-                                    const PopupMenuExample()
+                                    Padding(
+                                      padding: const EdgeInsets.only(right: 10),
+                                      child: IconButton(
+                                          onPressed: () {
+                                            resepProvider.removeResep();
+                                          },
+                                          icon: Icon(
+                                              Icons.delete)),
+                                    ),
+                                    // const PopupMenuExample()
                                   ],
                                 ),
                                 Padding(
@@ -104,7 +113,8 @@ class _DaftarResepScreenState extends State<DaftarResepScreen> {
                                                           judul: oke.judul,
                                                           bahantambahan:
                                                               oke.bahantambahan,
-                                                          caramasak: oke.caramasak,
+                                                          caramasak:
+                                                              oke.caramasak,
                                                           bahanawal:
                                                               oke.bahanawal)),
                                             );

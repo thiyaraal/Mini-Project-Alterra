@@ -9,12 +9,13 @@ class PrimaryButton extends StatelessWidget {
   double? width;
   final String text;
   Function() onPressed;
+  ButtonStyle? style;
   PrimaryButton(
       {Key? key,
       required this.text,
       required this.onPressed,
       required this.height,
-      required this.width})
+      required this.width, this.style})
       : super(key: key);
 
   @override
@@ -24,14 +25,14 @@ class PrimaryButton extends StatelessWidget {
       width: width,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            backgroundColor: ColorStyle().primarypink //, Background color
+            backgroundColor: ColorStyle().primaryblack, //, Background color
             ),
         onPressed: onPressed,
         child: Text(
-            textAlign: TextAlign.start,
+            textAlign: TextAlign.center,
             text,
             style: TextCustome().medium.copyWith(
-                fontSize: 16,
+                fontSize: 12,
                 fontWeight: FontWeight.w400,
                 color: ColorStyle().white)),
       ),
