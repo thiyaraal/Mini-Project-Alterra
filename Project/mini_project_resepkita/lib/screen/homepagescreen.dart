@@ -44,7 +44,7 @@ class _HomePageResepNusantaraState extends State<HomePageResepNusantara> {
               ),
             ),
             Text(
-              "ResepKita",
+              "ResepNusantara",
               style: TextCustome().medium.copyWith(
                   letterSpacing: 2, fontSize: 32, fontWeight: FontWeight.w500),
             ),
