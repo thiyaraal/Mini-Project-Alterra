@@ -5,7 +5,6 @@ import 'package:mini_project_resepkita/screen/buatresep.dart';
 import 'package:mini_project_resepkita/screen/detailsendiri.dart';
 import 'package:provider/provider.dart';
 
-import '../component/popmenu.dart';
 import '../style/colorsstyle.dart';
 import '../style/fontstyle.dart';
 
