@@ -16,7 +16,7 @@ class _PopupMenuExampleState extends State<PopupMenuExample> {
 
   @override
   Widget build(BuildContext context) {
-    final resepProvider = Provider.of<TodoListProvider>(context);
+    final resepProvider = Provider.of<ResepListProvider>(context);
     return Center(
         child: PopupMenuButton<SampleItem>(
       initialValue: selectedMenu,
@@ -33,7 +33,7 @@ class _PopupMenuExampleState extends State<PopupMenuExample> {
         ),
         PopupMenuItem<SampleItem>(
           onTap: () {
-            resepProvider.removeTodo();
+            resepProvider.removeResep();
           },
           value: SampleItem.itemTwo,
           child: Text('hapus'),

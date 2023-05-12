@@ -7,36 +7,36 @@ import '../models/create_model.dart';
 
 class AddEditResepWidget extends StatelessWidget {
   final String title;
-  final TodoModel? todo;
-  final TodoModel? todo2;
-  final TodoModel? todo3;
-  final TodoModel? judul;
+  final ResepModel? bahanawal;
+  final ResepModel? bahantambahan;
+  final ResepModel? caramasak;
+  final ResepModel? judul;
   const AddEditResepWidget(
       {Key? key,
       required this.title,
-      this.todo,
-      this.todo2,
-      this.todo3,
+      this.bahanawal,
+      this.bahantambahan,
+      this.caramasak,
       this.judul})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController todoController = TextEditingController();
-    TextEditingController todo2Controller = TextEditingController();
-    TextEditingController todo3Controller = TextEditingController();
+    TextEditingController bahanawalController = TextEditingController();
+    TextEditingController bahantambahanController = TextEditingController();
+    TextEditingController caramasakController = TextEditingController();
     TextEditingController judulController = TextEditingController();
     if (judul != null) {
       judulController.text = judul!.judul;
     }
-    if (todo != null) {
-      todoController.text = todo!.bahanmasakan;
+    if (bahanawal != null) {
+      bahanawalController.text = bahanawal!.bahanawal;
     }
-    if (todo2 != null) {
-      todo2Controller.text = todo2!.todo2;
+    if (bahantambahan != null) {
+      bahantambahanController.text = bahantambahan!.bahantambahan;
     }
-    if (todo3 != null) {
-      todo3Controller.text = todo3!.todo3;
+    if (caramasak != null) {
+      caramasakController.text = caramasak!.caramasak;
     }
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -44,43 +44,43 @@ class AddEditResepWidget extends StatelessWidget {
         child: Column(
           children: [
             TextField(
-              controller: todoController,
+              controller: bahanawalController,
               textCapitalization: TextCapitalization.sentences,
               decoration: InputDecoration(
                   border: InputBorder.none,
                   filled: true,
                   isDense: true,
                   fillColor: Colors.grey.shade100,
-                  labelText: 'todo',
+                  labelText: '  Masukkan Resep',
                   hintText: 'masukkan resep'),
             ),
             TextField(
-              controller: todo2Controller,
+              controller: bahantambahanController,
               textCapitalization: TextCapitalization.sentences,
               decoration: InputDecoration(
                   border: InputBorder.none,
                   filled: true,
                   isDense: true,
                   fillColor: Colors.grey.shade100,
-                  labelText: 'todo',
+                  labelText: '  Masukkan Resep',
                   hintText: 'masukkan resep'),
             ),
             TextButton(
                 onPressed: () {
                   {
-                    if (todo != null &&
-                        todo2 != null &&
-                        todo3 != null &&
+                    if (bahanawal != null &&
+                        bahantambahan != null &&
+                        caramasak != null &&
                         judul != null) {
                     } else {
                       const uuid = Uuid();
-                      Provider.of<TodoListProvider>(context, listen: false)
-                          .addTodo(TodoModel(
+                      Provider.of<ResepListProvider>(context, listen: false)
+                          .addResep(ResepModel(
                               id: uuid.v4(),
                               judul: judulController.text,
-                              bahanmasakan: todoController.text,
-                              todo2: todo2Controller.text,
-                              todo3: todoController.text));
+                              bahanawal: bahanawalController.text,
+                              bahantambahan: bahantambahanController.text,
+                              caramasak: bahanawalController.text));
                     }
                     Navigator.pop(context);
                   }

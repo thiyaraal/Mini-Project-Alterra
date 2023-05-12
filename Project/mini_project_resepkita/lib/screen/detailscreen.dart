@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:mini_project_resepkita/component/generalcomponet/Tekswidget.dart';
 
 import '../style/colorsstyle.dart';
 import '../style/fontstyle.dart';
@@ -55,13 +56,16 @@ class _DetailResepNusantaraState extends State<DetailResepNusantara> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 16, bottom: 16),
-                          child: Text(
-                            'Masakan ${widget.item['asal']}',
-                            style: TextCustome().medium.copyWith(fontSize: 14),
-                          ),
-                        ),
+                        // Padding(
+                        //   padding: const EdgeInsets.only(top: 16, bottom: 16),
+                        //   child: Text(
+                        // 'Masakan ${widget.item['asal']}',
+                        //     style: TextCustome().medium.copyWith(fontSize: 14),
+                        //   ),
+                        // ),
+                        WidgetText(
+                            text: 'Masakan ${widget.item['asal']}',
+                            style: const TextStyle(fontSize: 14)),
                         Row(
                           children: [
                             Icon(
@@ -133,35 +137,6 @@ class _DetailResepNusantaraState extends State<DetailResepNusantara> {
                       ),
                     ),
                   ),
-                  // Container(
-                  //   width: double.infinity,
-                  //   child: Card(
-                  //     color: ColorStyle().card,
-                  //     clipBehavior: Clip.antiAlias,
-                  //     child: Padding(
-                  //       padding: const EdgeInsets.all(12),
-                  //       child: Column(
-                  //         crossAxisAlignment: CrossAxisAlignment.start,
-                  //         children: [
-                  //           Text(
-                  //             'Bahan masakan',
-                  //             style:
-                  //                 TextCustome().medium.copyWith(fontSize: 14),
-                  //           ),
-                  //           SizedBox(height: 8),
-                  //           ...List.generate(
-                  //               widget.item["bumbuhalus"].length as int,
-                  //               (index) => Text(
-                  //                   "• ${widget.item['bumubuhalus'][index]}",
-                  //                   style: TextCustome().regular.copyWith(
-                  //                       //         fontSize: 12, color: ColorStyle().grey))),
-                  //                       )))
-                  //         ],
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
-
                   Card(
                     color: ColorStyle().card,
                     clipBehavior: Clip.antiAlias,
@@ -182,26 +157,6 @@ class _DetailResepNusantaraState extends State<DetailResepNusantara> {
                       ),
                     ),
                   ),
-                  // Card(
-                  //   color: ColorStyle().card,
-                  //   clipBehavior: Clip.antiAlias,
-                  //   child: Padding(
-                  //     padding: const EdgeInsets.all(12),
-                  //     child: Column(
-                  //       crossAxisAlignment: CrossAxisAlignment.start,
-                  //       children: [
-                  //         Text(
-                  //           'Cara Masak',
-                  //           style: TextCustome().medium.copyWith(fontSize: 14),
-                  //         ),
-                  //         SizedBox(height: 8),
-                  //         Text(widget.item['caramasak'],
-                  //             style: TextCustome().regular.copyWith(
-                  //                 fontSize: 12, color: ColorStyle().grey)),
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
                 ],
               ),
             )

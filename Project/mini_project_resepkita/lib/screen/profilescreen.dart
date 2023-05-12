@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mini_project_resepkita/component/generalcomponet/Tekswidget.dart';
 
 import '../component/profile/profile_menu.dart';
 import '../style/colorsstyle.dart';
 import '../style/fontstyle.dart';
 
 class Profile extends StatelessWidget {
-  static String routeName = "/profile";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +48,8 @@ class Profile extends StatelessWidget {
                                   // primary: Colors.white,
                                   backgroundColor: ColorStyle().primaryblack),
                               onPressed: () {},
-                              child:  Icon(Icons.edit, color: ColorStyle().backogrundbody))),
+                              child: Icon(Icons.edit,
+                                  color: ColorStyle().backogrundbody))),
                     ),
                   ],
                 ),

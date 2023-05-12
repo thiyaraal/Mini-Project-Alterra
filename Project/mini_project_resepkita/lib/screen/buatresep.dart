@@ -12,42 +12,42 @@ import '../style/fontstyle.dart';
 
 class BuatResep extends StatelessWidget {
   final String title;
-  final TodoModel? todo;
-  final TodoModel? todo2;
+  final ResepModel? bahanawal;
+  final ResepModel? bahantambahan;
   //////////
-  final TodoModel? judul;
+  final ResepModel? judul;
 
   //////////
-  final TodoModel? todo3;
+  final ResepModel? caramasak;
   const BuatResep(
       {Key? key,
       required this.title,
-      this.todo,
-      this.todo2,
-      this.todo3,
+      this.bahanawal,
+      this.bahantambahan,
+      this.caramasak,
       this.judul})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController todoController = TextEditingController();
-    TextEditingController todo2Controller = TextEditingController();
+    TextEditingController bahanawalController = TextEditingController();
+    TextEditingController bahantambahanController = TextEditingController();
     ///////////
-    TextEditingController todo3Controller = TextEditingController();
+    TextEditingController caramasakController = TextEditingController();
     /////////////
     TextEditingController judulController = TextEditingController();
 
     if (judul != null) {
       judulController.text = judul!.judul;
     }
-    if (todo != null) {
-      todoController.text = todo!.bahanmasakan;
+    if (bahanawal != null) {
+      bahanawalController.text = bahanawal!.bahanawal;
     }
-    if (todo2 != null) {
-      todo2Controller.text = todo2!.todo2;
+    if (bahantambahan != null) {
+      bahantambahanController.text = bahantambahan!.bahantambahan;
     }
-    if (todo3 != null) {
-      todo2Controller.text = todo3!.todo3;
+    if (caramasak != null) {
+      bahantambahanController.text = caramasak!.caramasak;
     }
     return Scaffold(
         backgroundColor: ColorStyle().backogrundbody,
@@ -88,9 +88,11 @@ class BuatResep extends StatelessWidget {
                       ),
                     ),
                     CardIsiResep(
+                      height: 150,
+                      width: 400,
                       labelText: "Bahan Masakan",
-                      hinText: "apa saja bahan masakannya",
-                      controler: todoController,
+                      hinText: "apa saja Bahan masakannya",
+                      controler: bahanawalController,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 12, bottom: 12),
@@ -100,9 +102,11 @@ class BuatResep extends StatelessWidget {
                       ),
                     ),
                     CardIsiResep(
-                      labelText: "Bahan Masakan",
-                      hinText: "apa saja bahan masakannya",
-                      controler: todo2Controller,
+                      height: 150,
+                      width: 400,
+                      labelText: "Bahan Tambahan",
+                      hinText: "apa saja Bahan tambahannya",
+                      controler: bahantambahanController,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 12, bottom: 12),
@@ -112,9 +116,11 @@ class BuatResep extends StatelessWidget {
                       ),
                     ),
                     CardIsiResep(
-                      labelText: "Bahan Masakan",
-                      hinText: "apa saja bahan masakannya",
-                      controler: todo3Controller,
+                      height: 200,
+                      width: 400,
+                      labelText: "Cara Memasak",
+                      hinText: "Bagaimana Cara Memasaknya",
+                      controler: caramasakController,
                     ),
                     const SizedBox(
                       height: 20,
@@ -132,9 +138,9 @@ class BuatResep extends StatelessWidget {
                         PrimaryButton(
                             text: 'Simpan',
                             onPressed: () {
-                              if (todoController.text.isEmpty &&
-                                  todo2Controller.text.isEmpty &&
-                                  todo3Controller.text.isEmpty &&
+                              if (bahanawalController.text.isEmpty &&
+                                  bahantambahanController.text.isEmpty &&
+                                  caramasakController.text.isEmpty &&
                                   judulController.text.isEmpty) {
                                 showDialog(
                                     context: context,
@@ -144,20 +150,20 @@ class BuatResep extends StatelessWidget {
                                           content: "Anda belum membuat resep");
                                     });
                               } else {
-                                if (todo2 != null &&
-                                    todo != null &&
-                                    todo3 != null &&
+                                if (bahantambahan != null &&
+                                    bahanawal != null &&
+                                    caramasak != null &&
                                     judul != null) {
                                 } else {
                                   const uuid = Uuid();
-                                  Provider.of<TodoListProvider>(context,
+                                  Provider.of<ResepListProvider>(context,
                                           listen: false)
-                                      .addTodo(TodoModel(
+                                      .addResep(ResepModel(
                                           id: uuid.v4(),
                                           judul: judulController.text,
-                                          bahanmasakan: todoController.text,
-                                          todo2: todo2Controller.text,
-                                          todo3: todo3Controller.text));
+                                          bahanawal: bahanawalController.text,
+                                          bahantambahan: bahantambahanController.text,
+                                          caramasak: caramasakController.text));
                                 }
                                 Navigator.pop(context);
                               }

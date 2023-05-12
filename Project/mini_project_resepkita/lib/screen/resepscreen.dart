@@ -30,13 +30,13 @@ class _DaftarResepScreenState extends State<DaftarResepScreen> {
                 letterSpacing: 2, fontSize: 24, fontWeight: FontWeight.w500),
           ),
         ),
-        //conusmer untuk mendapatkan todolist provider yang telah kita buat
-        body: Consumer<TodoListProvider>(
-          builder: (context, todoProvider, child) {
+        //conusmer untuk mendapatkan reseplist provider yang telah kita buat
+        body: Consumer<ResepListProvider>(
+          builder: (context, resepProvider, child) {
             return ListView(
                 padding: const EdgeInsets.all(20.0),
-                children: todoProvider.todoidList.isNotEmpty
-                    ? todoProvider.todoidList.map((oke) {
+                children: resepProvider.resepList.isNotEmpty
+                    ? resepProvider.resepList.map((oke) {
                         return Card(
                           child: Padding(
                             padding: const EdgeInsets.only(top: 12, bottom: 12),
@@ -62,9 +62,9 @@ class _DaftarResepScreenState extends State<DaftarResepScreen> {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
-                                      oke.bahanmasakan.length >= 140
-                                          ? "${oke.bahanmasakan.toString().substring(0, 140)}...."
-                                          : oke.todo2,
+                                      oke.bahanawal.length >= 140
+                                          ? "${oke.bahanawal.toString().substring(0, 140)}...."
+                                          : oke.bahanawal,
                                       style: TextCustome().regular.copyWith(
                                           fontSize: 12,
                                           color: ColorStyle().grey)),
@@ -72,9 +72,9 @@ class _DaftarResepScreenState extends State<DaftarResepScreen> {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
-                                      oke.todo2.length >= 140
-                                          ? "${oke.todo2.toString().substring(0, 140)}..."
-                                          : oke.todo2,
+                                      oke.bahantambahan.length >= 140
+                                          ? "${oke.bahantambahan.toString().substring(0, 140)}..."
+                                          : oke.bahantambahan,
                                       style: TextCustome().regular.copyWith(
                                           fontSize: 12,
                                           color: ColorStyle().grey)),
@@ -82,9 +82,9 @@ class _DaftarResepScreenState extends State<DaftarResepScreen> {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
-                                      oke.todo3.length >= 140
-                                          ? "${oke.todo3.toString().substring(0, 140)}..."
-                                          : oke.todo3,
+                                      oke.caramasak.length >= 140
+                                          ? "${oke.caramasak.toString().substring(0, 140)}..."
+                                          : oke.caramasak,
                                       style: TextCustome().regular.copyWith(
                                           fontSize: 12,
                                           color: ColorStyle().grey)),
@@ -101,10 +101,12 @@ class _DaftarResepScreenState extends State<DaftarResepScreen> {
                                               MaterialPageRoute(
                                                   builder: (_) =>
                                                       DetailResepAnda(
-                                                          bahan: oke.bahanmasakan,
-                                                          caramasak: oke.todo2,
-                                                          namamasakan:
-                                                              oke.todo3)),
+                                                          judul: oke.judul,
+                                                          bahantambahan:
+                                                              oke.bahantambahan,
+                                                          caramasak: oke.caramasak,
+                                                          bahanawal:
+                                                              oke.bahanawal)),
                                             );
                                           },
                                           height: 30,
